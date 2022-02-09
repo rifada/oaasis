@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <settings>
+        <!-- Timeout 설정-->
+        <setting name="defaultStatementTimeout" value="25"/>
+        <!-- Table under score(user_id) -> VO camel case (userId)-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 쿼리 결과가 null이면 누락되는 것을 방지-->
+        <setting name="callSettersOnNulls" value="true"/>
+        <!-- jdbcTypeForNull : 쿼리에 보내는 파라메터가 null인 경우, 오류 발생하는 것 방지  예) #{search.user} -->
+        <setting name="jdbcTypeForNull" value="NULL"/>
+    </settings>
+</configuration>

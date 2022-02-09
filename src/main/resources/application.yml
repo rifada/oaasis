@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  port: 8090
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:/mapper/*.xml
+logging:
+  config: classpath:logback.xml
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    username: postgres
+    password: 1234
+    url: jdbc:log4jdbc:postgresql://localhost:5432/holytiger
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    hikari:
+      username: postgres
+      password: 1234
+      jdbc-url: jdbc:log4jdbc:postgresql://localhost:5432/holytiger
+      driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy

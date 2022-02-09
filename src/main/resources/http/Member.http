@@ -1,0 +1,31 @@
+### 0./login
+POST http://localhost:8090/login
+Content-Type: application/json
+
+{
+  "userId":"holytiger",
+  "userPass": "1234"
+}
+
+
+### 1.member/join
+POST http://localhost:8090/member/join
+Content-Type: application/json
+
+{
+  "userId":"holytiger",
+  "userPass": "1234",
+  "userNm": "ksh",
+  "userEmail": "holytiger@kakao.com",
+  "userHpno": "01026397213",
+  "expired": false,
+  "enabled": true,
+  "locked": false,
+  "regId": "admin",
+  "modId": "admin"
+}
+
+
+### 2.member/{userId}
+//2.멤버조회
+GET http://localhost:8090/member/holytiger
